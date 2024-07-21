@@ -1,0 +1,159 @@
+.product {
+  padding: 50px 0;
+
+  &__title {
+    color: #334755;
+    font-size: 48px;
+    margin-bottom: 15px;
+    font-weight: 700;
+
+    @include adpt ($tab-r) {
+      font-size: 36px;
+    }
+
+    @include adpt ($bmob-r) {
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    grid-gap: 30px;
+
+    @include adpt ($tab-r) {
+      grid-template-columns: 240px 1fr;
+    }
+
+    @include adpt ($stab-r) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__left {
+    @include adpt ($stab-r) {
+      display: none;
+    }
+  }
+
+  &__left-item {
+    &:not(:last-child) {
+      margin-bottom: 4px;
+    }
+  }
+
+  &__left-link {
+    position: relative;
+    display: block;
+    padding: 14px 14px 14px 24px;
+    display: flex;
+    color: #334755;
+    background-color: #e2e2e2;
+
+    &:hover {
+      color: #1c72b8;
+
+      &::before {
+        background-color: #fe4a34;
+      }
+    }
+
+    &.active {
+      &::before {
+        background-color: $default;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 50%;
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  & .table-wrap {
+    overflow-x: auto;
+  }
+
+  &__content {
+    position: relative;
+    min-width: 0;
+    padding-bottom: 35px;
+  }
+
+  &__inner-text {
+    & p {
+      font-size: 16px;
+      font-weight: 300;
+
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+
+    & ul {
+      &:not(:last-child) {
+        margin: 30px 0;
+      }
+    }
+
+    & li {
+      font-weight: 300;
+      position: relative;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        margin-right: 12px;
+        background-color: #fe4a34;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+
+    & table {
+      margin: 30px 0;
+      border-spacing: 0;
+      border-collapse: collapse;
+      table-layout: fixed;
+      width: auto;
+
+      & td,
+      & th {
+        border: 2px solid #ababab;
+        padding: 10px 12px;
+        vertical-align: middle;
+        font-size: 16px;
+        text-align: center;
+        font-weight: 300;
+        background-color: #fff;
+      }
+
+      & tr {
+        &:first-child {
+          & th {
+            background-color: #1c72b8;
+            color: $white;
+          }
+        }
+      }
+    }
+
+    & caption {
+      font-weight: 700;
+      font-size: 18px;
+    }
+  }
+}

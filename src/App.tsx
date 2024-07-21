@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import { RouterProvider } from "react-router-dom";
+
+import { setTypeApp, useAppDispatch } from "./store";
+import router from "./routes";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const dispatch = useAppDispatch();
+
+  const [width, setWidth] = useState<number>(window.innerWidth);
+
+  useEffect(() => {
+    if (width < 1025) {
+      dispatch(setTypeApp("mob"));
+    }
+  }, [dispatch, width]);
+
+  window.onresize = () => {
+    setWidth(window.innerWidth);
+    if (width < 1025) {
+      dispatch(setTypeApp("mob"));
+    } else {
+      dispatch(setTypeApp("desk"));
+    }
+  };
+
+  return <RouterProvider router={router} />;
 }
 
 export default App;

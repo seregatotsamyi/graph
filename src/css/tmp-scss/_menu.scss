@@ -1,0 +1,105 @@
+.menu {
+  @include adpt ($tab-r) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $white;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    padding: 50px 20px;
+    padding-bottom: 70px;
+    justify-content: flex-start;
+    flex-direction: column;
+    transition: all 0.3s;
+    transform: translateX(100%);
+
+    &._open {
+      transform: translateX(0);
+    }
+  }
+
+  &__info {
+    display: none;
+
+    @include adpt ($tab-r) {
+      display: flex;
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      width: calc(100% - 40px);
+    }
+  }
+
+  &__burger {
+    display: none;
+
+    @include adpt ($tab-r) {
+      top: 15px;
+      right: 15px;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 35px;
+      font-size: 25px;
+      height: 35px;
+    }
+  }
+
+  &__nav {
+    @include adpt ($tab-r) {
+      width: 100%;
+      overflow-y: auto;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+
+    @include adpt ($tab-r) {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      width: 100%;
+    }
+  }
+
+  &__item {
+    @include adpt ($tab-r) {
+      width: 100%;
+    }
+
+    &:not(:last-child) {
+      margin-right: 30px;
+
+      @include adpt ($tab-r) {
+        margin-right: 0;
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    padding-bottom: 10px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #2e3a46;
+    border-bottom: 4px solid transparent;
+    transition: all 0.3s;
+
+    @include adpt ($tab-r) {}
+
+    &.active{
+      color: #1c72b8;
+      border-color: #fe4a34;
+    }
+    &:hover {
+      color: #1c72b8;
+      border-color: #fe4a34;
+    }
+  }
+}

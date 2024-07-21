@@ -1,0 +1,145 @@
+.feedback {
+  padding: 24px 0 48px;
+  background-color: #e2e2e2;
+
+  @include adpt ($bmob-r) {
+    padding: 30px 0;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 48px;
+    color: $default;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: #334755;
+
+    @include adpt ($tab-r) {
+      font-size: 36px;
+    }
+
+    @include adpt ($bmob-r) {
+      font-size: 30px;
+    }
+  }
+
+  &__text {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 12px;
+    text-align: center;
+    opacity: 0.8;
+
+    & a {
+      color: $accent;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+
+    @include adpt ($tab-r) {
+      flex-direction: column;
+    }
+  }
+
+  &__input-wrap {
+    @include adpt ($tab-r) {
+      width: 100%;
+    }
+  }
+
+  &__item {
+    @include adpt ($tab-r) {
+      width: 100%;
+    }
+
+    &:not(:last-child) {
+      margin-right: 35px;
+
+      @include adpt ($tab-r) {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__input-wrap {
+    display: flex;
+    align-items: center;
+  }
+
+  &__lable {
+    font-size: 20px;
+    font-weight: 700;
+    margin-right: 20px;
+    display: flex;
+
+    @include adpt ($bmob-r) {
+      font-size: 18px;
+      margin-right: 15px;
+    }
+
+    & span {
+      color: red;
+      margin-left: 5px;
+    }
+  }
+
+  &__input {
+    outline: none;
+    box-shadow: inset 1px 2px 4px rgba(57, 71, 85, 0.32);
+    background-color: #fff;
+    padding: 14px 16px;
+    border-radius: 4px;
+    max-width: 100%;
+    max-width: 300px;
+    width: 300px;
+
+    @include adpt ($tab-r) {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  &__btn {
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: 0;
+    box-shadow: 3px 5px 8px rgba(57, 71, 85, 0.16);
+    background-color: #fe4a34;
+    padding: 18px 35px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    box-sizing: border-box;
+    text-align: left;
+    padding-left: 76px;
+    background-image: url('../../assets/img/icon/callback.svg');
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    background-position: center left 43px;
+    transition: all 0.3s;
+
+    @include adpt ($bmob-r) {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

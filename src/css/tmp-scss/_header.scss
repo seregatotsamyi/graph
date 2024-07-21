@@ -1,0 +1,100 @@
+.header {
+  padding: 40px 0 10px;
+
+  @include adpt ($tab-r) {
+    padding: 30px 0 10px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  &__logo {
+    flex-shrink: 0;
+    margin-right: 30px;
+  }
+
+  &__logo-img {
+    @include adpt ($tab-r) {
+      max-width: 220px;
+      object-fit: contain;
+      height: auto;
+    }
+
+    @include adpt ($bmob-r) {
+      max-width: 170px;
+    }
+  }
+
+  &__burger {
+    display: none;
+
+    @include adpt ($tab-r) {
+      display: block;
+      width: 35px;
+      height: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 25px;
+    }
+  }
+
+  &__right {
+    max-width: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include adpt ($tab-r) {
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__right-contacts {
+    position: relative;
+    padding-left: 56px;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @include adpt ($tab-r) {
+      font-size: 25px;
+      padding-left: 45px;
+      line-height: 1.4;
+    }
+    @include adpt ($bmob-r){
+      font-size: 18px;
+      padding-left: 35px;
+    }
+
+    &_phone {
+      background-image: url('../../assets/img/icon/phone-header.svg');
+
+      @include adpt ($tab-r) {
+        margin-right: 20px;
+      }
+    }
+
+    &_mail {
+      background-image: url('../../assets/img/icon/mail-header.svg');
+      color: #334755;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

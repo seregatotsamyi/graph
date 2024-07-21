@@ -1,0 +1,48 @@
+$white: var(--white-color);
+$default: var(--default-color);
+$black: var(--black-color);
+$bg: var(--bg-color);
+$accent: var(--accent-color);
+$grey: var(--grey-color);
+$red: var(--red-color);
+$blue2: var(--blue2-color);
+
+
+$mainFont: var(--main-font);
+$secondFont: var(--second-font);
+
+
+:root {
+  --white-color: #ffffff;
+  --default-color: #2A2A39;
+  --bg-color: #e5f2fd;
+  --accent-color: #7d99b4;
+  --black-color: #000000;
+  --grey-color: #d3dde9;
+  --red-color: #c72727;
+  --blue2-color: #F0F4F8;
+  --main-font: "Fira Sans", sans-serif;
+  --second-font: "Open Sans", sans-serif;
+}
+
+$big-r: 1380;
+$desm-r: 1280;
+$tab-r: 1024;
+$mtab-r: 992;
+$stab-r: 768;
+$bmob-r: 576;
+
+
+@mixin adpt($width) {
+  @media (max-width: #{$width}px) {
+    @content;
+  }
+}
+
+@mixin adpt-mob($width) {
+  @media (min-width: #{$width}px) {
+    @content;
+  }
+}
+
+@include adpt ($bmob-r) {}

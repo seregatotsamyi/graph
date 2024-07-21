@@ -1,0 +1,122 @@
+.DemoWork {
+  background: url('../../assets//img/slider-bg.jpg');
+  padding: 35px 0;
+
+  @include adpt ($bmob-r) {
+    padding: 30px 0;
+  }
+
+  &__title {
+    color: $white;
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 15px;
+    font-weight: 700;
+
+    @include adpt ($tab-r) {
+      font-size: 36px;
+    }
+
+    @include adpt ($bmob-r) {
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 50px;
+
+    @include adpt ($bmob-r) {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    flex: 1;
+    max-width: 299px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+
+      @include adpt ($bmob-r) {
+        margin-right: 0;
+      }
+    }
+
+    @include adpt ($bmob-r) {
+      margin: 0 auto 10px !important;
+    }
+
+
+
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.6);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+  }
+
+  &__img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+  }
+
+  &__btn {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: left;
+    box-shadow: 3px 5px 8px rgba(57, 71, 85, 0.16);
+    border: 4px solid #fff;
+    padding: 15px 70px;
+    font-size: 20px;
+    font-weight: 700;
+    color: $white;
+    border-radius: 4px;
+    padding-right: 100px;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $default;
+      background-color: $white;
+      border-color: $white;
+
+      & .DemoWork__btn-arrow {
+        fill: $default;
+      }
+    }
+  }
+
+  &__btn-arrow {
+    position: absolute;
+    width: 17px;
+    height: 18px;
+    top: 50%;
+    right: 76px;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    fill: #fff;
+    transition: all 0.3s;
+  }
+}

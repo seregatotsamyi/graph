@@ -1,0 +1,36 @@
+.bredcrumbs {
+  margin-bottom: 35px;
+
+  @include adpt ($bmob-r) {
+    margin-bottom: 30px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    margin-bottom: 5px;
+
+    &:not(:last-child) {
+      margin-right: 3px;
+
+      &::after {
+        content: " /";
+      }
+    }
+
+    &:last-child {
+      & a {
+        color: $default;
+      }
+    }
+  }
+
+  &__link {
+    font-size: 14px;
+    color: #1c72b8;
+  }
+
+}
