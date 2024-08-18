@@ -41,7 +41,19 @@
       }
 
       @include adpt ($stab-r) {
-        display: none;
+        background-image: url('../../assets/img/printer2.png');
+        width: 100%;
+        height: auto;
+        left: -20px;
+        top: 70%;
+        aspect-ratio: 676/395;
+      }
+
+      @include adpt ($bmob-r) {
+        background-image: url('../../assets/img/printer3.png');
+        top: 50%;
+        left: -60px;
+        width: calc(100% + 80px);
       }
     }
 
@@ -49,7 +61,20 @@
       margin: 0 15px 0 80px;
 
       @include adpt ($stab-r) {
-        margin: 0;
+        margin: 0 65px 0 80px;
+      }
+
+      @include adpt ($bmob-r) {
+        margin-right: 55px;
+        margin-left: 80px;
+      }
+      @include adpt (440){
+        margin-right: 35px;
+        margin-left: 60px;
+      }
+      @include adpt (380){
+        margin-right: 32px;
+        margin-left: 50px;
       }
     }
   }

@@ -18,7 +18,7 @@ export default function Promo() {
           <Swiper
             modules={[Autoplay]}
             spaceBetween={width > 1024 ? 20 : 15}
-            slidesPerView={width > 768 ? 4 : width > 576 ? 3 : 2}
+            slidesPerView={width > 768 ? 4 : width > 576 ? 3 : 1.7}
             loop
             freeMode={true}
             speed={9000}

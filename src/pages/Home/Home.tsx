@@ -13,7 +13,7 @@ export const HomeScreen = () => {
         <Search />
         <Categories />
       </div>
-			<DemoWork/>
+			<DemoWork/> 
 			<Feedback/>
     </>
   );
